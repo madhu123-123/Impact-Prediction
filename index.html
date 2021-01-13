@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html >
+    <!--From https://codepen.io/frytyler/pen/EGdtg-->
+    <head>
+      <meta charset="UTF-8">
+      <title>ML API</title>
+      <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+    </head>
+   
+
+    <body  text='#304b5c' bgcolor= '#b2b9eb
+    ' >
+ 
+     
+     <div class="login" >
+     <center>
+   
+        <h1>Incident Managament</h1>
+    
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('impact')}}"method="post">
+        
+           <div class="form-group">
+                ID:
+                    <input type="text" name="ID" placeholder="ID" required="required" /><br><br>
+                  ID_status:
+                    <select name="ID_status" class="form-control">
+                <option value="New">New</option>
+                <option value="Resolved">Resolved</option>
+                <option value="Closed">Closed</option>
+                <option value="Active">Active</option>
+                <option value="Awaiting User Info">Awaiting User Info</option>
+                <option value="Awaiting Problem">Awaiting Problem</option>
+                <option value="Awaiting Vendor">Awaiting Vendor</option>
+                <option value="Awaiting Evidence">Awaiting Evidence</option>         
+              </select><br><br>
+              Active:
+              <select name="active" class="form-control">
+                   <option value="True">True</option>
+                <option value="False">False</option>
+                </select><br><br>
+                <div class="form-group">
+                Count_reassign:
+          <input class="form-control" type="number" name="count_reassign" min="0" required=""> <br><br>
+          Count_opening:
+          <input class="form-control" type="number" name="count_opening" min="0" required=""><br><br>
+          Count_updated:
+           <input class="form-control" type="number" name="count_updated" min="0" required=""><br><br>
+           Opened_by:
+           <input class="form-control" type="number" name="opened_by" min="0" required=""><br><br>
+           ID_caller:
+             <input class="form-control" type="number" name="ID_caller" min="0" required=""><br><br>
+       
+             Created_by:
+         <input class="form-control" type="number" name="Created_by" min="0" required=""><br><br>
+         Updated_by:
+       <input class="form-control" type="number" name="updated_by" min="0" required=""><br><br>
+       Type of contact:
+       <select name="type of contact" class="form-control">
+                   <option value="Phone">Phone</option>
+                    <option value="Direct opening">Direct opening</option>
+                     <option value="Email">Email</option>
+                      <option value="IVR">IVR</option>
+                <option value="Self service">Self service</option>
+                </select><br><br>
+       Location:
+      <input class="form-control" type="number" name="location" min="0" required=""><br><br>
+      Category_ID:
+      <input class="form-control" type="number" name="category_ID" min="0" required=""><br><br>
+      User_symptom:
+       <input class="form-control" type="number" name="user_symptom" min="0" required=""> <br><br>
+       Support_group:
+         <input class="form-control" type="number" name="Support_group" min="0" required=""><br><br>
+         Support_incharge:
+                <input class="form-control" type="number" name="support_incharge" min="0" required=""><br><br>
+                    </div>
+           
+            <button type="submit" class="btn btn-primary btn-block btn-large">Impact</button>
+        </form>
+    
+       <br>
+       <br>
+        {{prediction_text }}
+    </center>
+     </div>
+    
+    
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
